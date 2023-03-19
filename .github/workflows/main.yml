@@ -9,7 +9,7 @@ on :
       -  main
 
 jobs: 
-  build-and-push:
+  authenticate-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -30,3 +30,6 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
           cluster-name: tf-juliusoh-eks-cluster-us-west-2
           chart-path: portfolio
+          name: portfolio 
+          config-files: portfolio/values.yaml
+          namespace: portfolio
