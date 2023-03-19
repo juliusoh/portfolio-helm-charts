@@ -48,6 +48,7 @@ ingress:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/subnets: subnet-0af1b85a84956b302, subnet-02cbae24671dabab6, subnet-00c9bb5929255e943 
   hosts:
     - host: juliusoh.com
       paths:
