@@ -41,16 +41,18 @@ service:
   port: 80
 
 ingress:
-  enabled: false
-  className: ""
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  enabled: true
+  className: "alb"
+  annotations: 
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:939919218449:certificate/8647a536-cff6-4ee4-b9fd-72dd179d49db
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+    alb.ingress.kubernetes.io/scheme: internet-facing
   hosts:
-    - host: chart-example.local
+    - host: juliusoh.com
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Exact
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
