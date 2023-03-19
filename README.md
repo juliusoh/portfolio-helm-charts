@@ -1,0 +1,1 @@
+helm upgrade portfolio portfolio --install --values=portfolio/values.yaml --namespace=portfolio --create-namespace

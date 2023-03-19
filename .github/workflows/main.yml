@@ -1,0 +1,32 @@
+name: Docker Build/Push and Deploy 
+
+on : 
+  push : 
+    branches : 
+      -  master 
+  pull_request : 
+    branches : 
+      -  master
+
+jobs: 
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+      - name: Install Helm Chart
+        uses: bitovi/github-actions-deploy-eks-helm@v1.2.3
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          cluster-name: tf-juliusoh-eks-cluster-us-west-2
+          chart-path: portfolio
