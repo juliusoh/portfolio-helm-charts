@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "point-of-sale.fullname" . }}-test-connection"
+  labels:
+    {{- include "point-of-sale.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "point-of-sale.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

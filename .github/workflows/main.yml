@@ -24,7 +24,7 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
-      - name: Install Helm Chart
+      - name: Install Helm Chart Portfolio
         uses: bitovi/github-actions-deploy-eks-helm@v1.2.3
         with:
           aws-region: ${{ secrets.AWS_REGION }}
@@ -33,3 +33,12 @@ jobs:
           name: portfolio 
           config-files: portfolio/values.yaml
           namespace: portfolio
+      - name: Install Helm Chart Point-of-Sale
+        uses: bitovi/github-actions-deploy-eks-helm@v1.2.3
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          cluster-name: tf-juliusoh-eks-cluster-us-west-2
+          chart-path: point-of-sale
+          name: point-of-sale 
+          config-files: point-of-sale/values.yaml
+          namespace: point-of-sale
