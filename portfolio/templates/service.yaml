@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ include "portfolio.fullname" . }}
   labels:
-    {{- include "portfolio.labels" . | nindent 4 }}
+    alb.ingress.kubernetes.io/target-type: 'ip' 
 spec:
   type: {{ .Values.service.type }}
   ports:
