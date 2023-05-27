@@ -45,3 +45,12 @@ jobs:
           name: point-of-sale 
           config-files: point-of-sale/values.yaml
           namespace: point-of-sale
+      - name: Install Helm Chart ecommerce
+        uses: bitovi/github-actions-deploy-eks-helm@v1.2.3
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          cluster-name: ${{ env.cluster-name }}
+          chart-path: ecommerce
+          name: ecommerce 
+          config-files: ecommerce/values.yaml
+          namespace: ecommerce
