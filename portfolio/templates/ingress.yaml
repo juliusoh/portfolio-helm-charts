@@ -7,8 +7,9 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/group.name: juliusoh
+    alb.ingress.kubernetes.io/group.name: shared-lb
     alb.ingress.kubernetes.io/group.order: '1'
+    alb.ingress.kubernetes.io/subnets: subnet-0b0c0dc90226cf19a, subnet-020bf374dd5227595
 spec:
   ingressClassName: alb
   rules:

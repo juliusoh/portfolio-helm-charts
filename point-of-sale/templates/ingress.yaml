@@ -1,14 +1,15 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: portfolio
+  name: point-of-sale
   annotations:
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-1:673692536255:certificate/3b5538c6-e965-407c-8869-f6169cfd29a3
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/group.name: juliusoh
+    alb.ingress.kubernetes.io/group.name: shared-lb
     alb.ingress.kubernetes.io/group.order: '2'
+    alb.ingress.kubernetes.io/subnets: subnet-0b0c0dc90226cf19a, subnet-020bf374dd5227595
 spec:
   ingressClassName: alb
   rules:
