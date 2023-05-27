@@ -8,6 +8,9 @@ on :
     branches : 
       -  main
 
+env:
+  cluster-name: tf-juliusoh-eks-cluster-us-west-1
+
 jobs: 
   authenticate-and-deploy:
     runs-on: ubuntu-latest
@@ -28,7 +31,7 @@ jobs:
         uses: bitovi/github-actions-deploy-eks-helm@v1.2.3
         with:
           aws-region: ${{ secrets.AWS_REGION }}
-          cluster-name: tf-juliusoh-eks-cluster-us-west-1
+          cluster-name: ${{ env.cluster-name }}
           chart-path: portfolio
           name: portfolio 
           config-files: portfolio/values.yaml
@@ -37,7 +40,7 @@ jobs:
         uses: bitovi/github-actions-deploy-eks-helm@v1.2.3
         with:
           aws-region: ${{ secrets.AWS_REGION }}
-          cluster-name: tf-juliusoh-eks-cluster-us-west-2
+          cluster-name: ${{ env.cluster-name }}
           chart-path: point-of-sale
           name: point-of-sale 
           config-files: point-of-sale/values.yaml
