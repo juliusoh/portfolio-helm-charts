@@ -3,12 +3,12 @@ kind: Ingress
 metadata:
   name: portfolio
   annotations:
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:939919218449:certificate/8647a536-cff6-4ee4-b9fd-72dd179d49db
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-1:673692536255:certificate/3b5538c6-e965-407c-8869-f6169cfd29a3
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/subnets: subnet-0af1b85a84956b302, subnet-02cbae24671dabab6, subnet-00c9bb5929255e943 
-    alb.ingress.kubernetes.io/target-type: 'ip'
+    alb.ingress.kubernetes.io/group.name: juliusoh
+    alb.ingress.kubernetes.io/group.order: '1'
 spec:
   ingressClassName: alb
   rules:
