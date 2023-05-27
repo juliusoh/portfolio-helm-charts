@@ -28,7 +28,7 @@ jobs:
         uses: bitovi/github-actions-deploy-eks-helm@v1.2.3
         with:
           aws-region: ${{ secrets.AWS_REGION }}
-          cluster-name: tf-juliusoh-eks-cluster-us-west-2
+          cluster-name: tf-juliusoh-eks-cluster-us-west-1
           chart-path: portfolio
           name: portfolio 
           config-files: portfolio/values.yaml
