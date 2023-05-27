@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: 939919218449.dkr.ecr.us-west-2.amazonaws.com
+  repository: 673692536255.dkr.ecr.us-west-1.amazonaws.com
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "juliusoh:portfolio-37a7b2e8acbb655e4a143d602c1ae6bca451563d"
+  tag: portfolio-c608769df915d21a72567fa64e899fd98cad207e
 
 imagePullSecrets: []
 nameOverride: "portfolio"

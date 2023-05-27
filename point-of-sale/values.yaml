@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: 939919218449.dkr.ecr.us-west-2.amazonaws.com/juliusoh
+  repository: 673692536255.dkr.ecr.us-west-1.amazonaws.com/juliusoh
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "pos-beb2466b92619d72f5bf83dafab5989271bbd97d"
+  tag: pos-9b0ad0ac2471c0325eb1fa466decee6df05f7aba
 
 imagePullSecrets: []
 nameOverride: "point-of-sale"
