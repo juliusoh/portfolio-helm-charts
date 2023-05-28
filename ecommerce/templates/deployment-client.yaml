@@ -1,16 +1,15 @@
+  
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "ecommerce.fullname" . }}
-  labels:
-    {{- include "ecommerce.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "ecommerce.selectorLabels" . | nindent 6 }}
+      app: ecommerce-client
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,20 +17,15 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "ecommerce.selectorLabels" . | nindent 8 }}
+        app: ecommerce-api
     spec:
-      containers:
-        - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+      containers:      
+        - name: ecommerce-client
+          image: "{{ .Values.image.repository }}:{{ .Values.image.clientTag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          envFrom:
-            - secretRef:
-                name: env-vars
           ports:
             - name: http
-              containerPort: 5000
+              containerPort: 3000
               protocol: TCP
           livenessProbe:
             httpGet:

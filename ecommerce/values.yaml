@@ -9,6 +9,7 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ecommerce-api-68e853e52c0480ee50c367671e7c1d28ee74bf0c
+  clientTag: ecommerce-web-68e853e52c0480ee50c367671e7c1d28ee74bf0c
 
 imagePullSecrets: []
 nameOverride: "ecommerce"

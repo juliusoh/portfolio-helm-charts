@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-client
+spec:
+  selector:
+    app: ecommerce-client
+  ports:
+  - port: 80
+    name: http
+    protocol: TCP
+    targetPort: 5000
