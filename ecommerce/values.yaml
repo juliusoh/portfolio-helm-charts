@@ -8,9 +8,8 @@ image:
   repository: 673692536255.dkr.ecr.us-west-1.amazonaws.com/juliusoh
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ecommerce-api-68e853e52c0480ee50c367671e7c1d28ee74bf0c
-  clientTag: ecommerce-web-68e853e52c0480ee50c367671e7c1d28ee74bf0c
-
+  tag: ecommerce-api-0f9264a6ff57812b59936edeb7d2994c8d6e78f3
+  clientTag: ecommerce-web-0f9264a6ff57812b59936edeb7d2994c8d6e78f3
 imagePullSecrets: []
 nameOverride: "ecommerce"
 fullnameOverride: "ecommerce"
