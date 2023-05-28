@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ecommerce-client
+  name: ecommerce-api
 spec:
   selector:
-    app: ecommerce-client
+    app: ecommerce-api
   ports:
   - port: 80
     name: http
