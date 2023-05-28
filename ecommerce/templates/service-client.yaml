@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: ecommerce-client
 spec:
+  type: NodePort
   selector:
     app: ecommerce-client
   ports:
