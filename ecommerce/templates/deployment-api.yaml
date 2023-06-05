@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: ecommerce-api
 spec:
+  strategy:
+    type: Recreate
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}

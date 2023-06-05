@@ -4,6 +4,8 @@ kind: Deployment
 metadata:
   name: ecommerce-client
 spec:
+  strategy:
+    type: Recreate
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
