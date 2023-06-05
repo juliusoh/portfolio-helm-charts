@@ -1,19 +1,15 @@
 # Default values for point-of-sale.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-
 replicaCount: 1
-
 image:
   repository: 673692536255.dkr.ecr.us-west-1.amazonaws.com/juliusoh
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: pos-9b0ad0ac2471c0325eb1fa466decee6df05f7aba
-
+  tag: pos-7357e3cce5ae4a57a6984adc7384f6c325fda787
 imagePullSecrets: []
 nameOverride: "point-of-sale"
 fullnameOverride: "point-of-sale"
-
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
@@ -22,33 +18,30 @@ serviceAccount:
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
-
 podAnnotations: {}
-
 podSecurityContext: {}
-  # fsGroup: 2000
+# fsGroup: 2000
 
 securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+# capabilities:
+#   drop:
+#   - ALL
+# readOnlyRootFilesystem: true
+# runAsNonRoot: true
+# runAsUser: 1000
 
 service:
   type: NodePort
   port: 80
-
 ingress:
   enabled: true
   className: "alb"
-  annotations: 
+  annotations:
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:939919218449:certificate/b33af08a-1226-4a24-b294-e6c5ab0e48f1
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/subnets: subnet-0af1b85a84956b302, subnet-02cbae24671dabab6, subnet-00c9bb5929255e943 
+    alb.ingress.kubernetes.io/subnets: subnet-0af1b85a84956b302, subnet-02cbae24671dabab6, subnet-00c9bb5929255e943
   hosts:
     - host: pos.juliusoh.com
       paths:
@@ -58,8 +51,7 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
-
-resources: 
+resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -70,16 +62,12 @@ resources:
   requests:
     cpu: 100m
     memory: 128Mi
-
 autoscaling:
   enabled: true
   minReplicas: 1
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
-
 nodeSelector: {}
-
 tolerations: []
-
 affinity: {}
