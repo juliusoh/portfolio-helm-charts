@@ -6,7 +6,7 @@ image:
   repository: 673692536255.dkr.ecr.us-west-1.amazonaws.com/juliusoh
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: portfolio-e4449c6300701d711ba1e314afc8cacc335cce55
+  tag: portfolio-46e3d915938e92683a797c80d9db5814b9905ab8
 imagePullSecrets: []
 nameOverride: "portfolio"
 fullnameOverride: "portfolio"
