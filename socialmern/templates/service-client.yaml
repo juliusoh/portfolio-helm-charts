@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: socialmern-client
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: socialmern-client
   ports:
