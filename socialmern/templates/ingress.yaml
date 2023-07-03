@@ -5,6 +5,7 @@ metadata:
   annotations:
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-1:673692536255:certificate/8d6c5d34-2b0c-4f47-99c4-095cd3c78405
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/group.name: shared-lb
     alb.ingress.kubernetes.io/group.order: '7'
