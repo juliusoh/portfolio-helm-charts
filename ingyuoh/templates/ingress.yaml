@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: ingyuoh
   annotations:
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-1:673692536255:certificate/8d6c5d34-2b0c-4f47-99c4-095cd3c78405
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-1:673692536255:certificate/76fe15e6-ad41-4c0a-9c65-f481a8fa307e
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/scheme: internet-facing
