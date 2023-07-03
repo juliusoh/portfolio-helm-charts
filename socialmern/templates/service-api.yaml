@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: socialmern-api
+spec:
+  type: NodePort
+  selector:
+    app: socialmern-api
+  ports:
+  - port: 80
+    name: http
+    protocol: TCP
+    targetPort: 5000
