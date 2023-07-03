@@ -6,8 +6,8 @@ image:
   repository: 673692536255.dkr.ecr.us-west-1.amazonaws.com/juliusoh
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: socialmern-api-806698776865d1ef35189c7ebb8baa90b58a11a2
-  clientTag: socialmern-web-806698776865d1ef35189c7ebb8baa90b58a11a2
+  tag: socialmern-api-4eefe8ccccd9fe10fe9e1abf59bf5647a5c3871c
+  clientTag: socialmern-web-4eefe8ccccd9fe10fe9e1abf59bf5647a5c3871c
 imagePullSecrets: []
 nameOverride: "socialmern"
 fullnameOverride: "socialmern"
