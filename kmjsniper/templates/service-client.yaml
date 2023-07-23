@@ -10,4 +10,4 @@ spec:
   - port: 80
     name: http
     protocol: TCP
-    targetPort: 3000
+    targetPort: 8888
