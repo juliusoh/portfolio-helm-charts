@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kmjsniper-api
+spec:
+  type: ClusterIP
+  selector:
+    app: kmjsniper-api
+  ports:
+  - port: 80
+    name: http
+    protocol: TCP
+    targetPort: 5000
