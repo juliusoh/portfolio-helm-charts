@@ -1,56 +1,59 @@
-# name: Docker Build/Push and Deploy 
+name: Docker Build/Push and Deploy
 
-# on : 
-#   push : 
-#     branches : 
-#       -  main 
-#   pull_request : 
-#     branches : 
-#       -  main
+on :
+  push :
+    branches :
+      -  main
+  pull_request :
+    branches :
+      -  main
 
-# env:
-#   cluster-name: tf-juliusoh-eks-cluster-us-west-1
+env:
+  cluster-name: tf-juliusoh-eks-cluster-us-west-1
 
-# jobs: 
-#   authenticate-and-deploy:
-#     runs-on: ubuntu-latest
-#     permissions:
-#       id-token: write
-#       contents: read
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v3
-#       - uses: aws-actions/configure-aws-credentials@v1
-#         with:
-#           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-#           aws-region: ${{ secrets.AWS_REGION }}
-#       - name: Login to Amazon ECR
-#         id: login-ecr
-#         uses: aws-actions/amazon-ecr-login@v1
-#       - name: Install Helm Chart Portfolio
-#         uses: bitovi/github-actions-deploy-eks-helm@v1.2.3
-#         with:
-#           aws-region: ${{ secrets.AWS_REGION }}
-#           cluster-name: ${{ env.cluster-name }}
-#           chart-path: portfolio
-#           name: portfolio 
-#           config-files: portfolio/values.yaml
-#           namespace: portfolio
-#       - name: Install Helm Chart Point-of-Sale
-#         uses: bitovi/github-actions-deploy-eks-helm@v1.2.3
-#         with:
-#           aws-region: ${{ secrets.AWS_REGION }}
-#           cluster-name: ${{ env.cluster-name }}
-#           chart-path: point-of-sale
-#           name: point-of-sale 
-#           config-files: point-of-sale/values.yaml
-#           namespace: point-of-sale
-#       - name: Install Helm Chart ecommerce
-#         uses: bitovi/github-actions-deploy-eks-helm@v1.2.3
-#         with:
-#           aws-region: ${{ secrets.AWS_REGION }}
-#           cluster-name: ${{ env.cluster-name }}
-#           chart-path: ecommerce
-#           name: ecommerce 
-#           config-files: ecommerce/values.yaml
-#           namespace: ecommerce
+
+
+jobs:
+  if: false
+  authenticate-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+      - name: Install Helm Chart Portfolio
+        uses: bitovi/github-actions-deploy-eks-helm@v1.2.3
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          cluster-name: ${{ env.cluster-name }}
+          chart-path: portfolio
+          name: portfolio
+          config-files: portfolio/values.yaml
+          namespace: portfolio
+      - name: Install Helm Chart Point-of-Sale
+        uses: bitovi/github-actions-deploy-eks-helm@v1.2.3
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          cluster-name: ${{ env.cluster-name }}
+          chart-path: point-of-sale
+          name: point-of-sale
+          config-files: point-of-sale/values.yaml
+          namespace: point-of-sale
+      - name: Install Helm Chart ecommerce
+        uses: bitovi/github-actions-deploy-eks-helm@v1.2.3
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          cluster-name: ${{ env.cluster-name }}
+          chart-path: ecommerce
+          name: ecommerce
+          config-files: ecommerce/values.yaml
+          namespace: ecommerce
