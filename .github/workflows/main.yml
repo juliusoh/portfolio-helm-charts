@@ -1,20 +1,12 @@
 name: Docker Build/Push and Deploy
 
-on :
-  push :
-    branches :
-      -  main
-  pull_request :
-    branches :
-      -  main
-
+on: workflow_dispatch
 env:
   cluster-name: tf-juliusoh-eks-cluster-us-west-1
 
 
 
 jobs:
-  if: false
   authenticate-and-deploy:
     runs-on: ubuntu-latest
     permissions:
