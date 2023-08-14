@@ -5,7 +5,7 @@ metadata:
   name: kmjsniper-client
 spec:
   strategy:
-    type: Recreate
+    type: RollingUpdate
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
