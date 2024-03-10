@@ -1,7 +1,6 @@
 image:
   repository: 673692536255.dkr.ecr.us-west-1.amazonaws.com/juliusoh
-  tag: latest
+  tag: coin-report-d9991a75adc8df0f16fccf714484adc2dd85eb49
   pullPolicy: IfNotPresent
-
 cronjob:
   schedule: "0 8 * * SAT"
