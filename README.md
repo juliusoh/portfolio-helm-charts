@@ -6,6 +6,8 @@ helm upgrade ecommerce ecommerce --install --values=ecommerce/values.yaml --name
 
 helm upgrade ingyuoh ingyuoh --install --values=ingyuoh/values.yaml --namespace=ingyuoh --create-namespace
 
+helm upgrade coin-report coin-report --install --values=coin-report/values.yaml --namespace=coin-report --create-namespace
+
 helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=tf-juliusoh-eks-cluster-us-west-2 --set serviceAccount.create=false --set serviceAccount.name-=aws-load-balancer-controller
 
 https://github.com/jetstack/cert-manager/releases/download/v1.5.3/cert-manager.yaml
