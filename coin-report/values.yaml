@@ -4,4 +4,4 @@ image:
   pullPolicy: IfNotPresent
 
 cronjob:
-  schedule: "0 0 * * SAT"
+  schedule: "0 8 * * SAT"
