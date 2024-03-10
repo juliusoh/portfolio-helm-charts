@@ -12,4 +12,7 @@ spec:
           - name: {{ .Release.Name }}-container
             image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
             imagePullPolicy: {{ .Values.image.pullPolicy }}
+            envFrom:
+            - secretRef:
+                name: env-vars
           restartPolicy: OnFailure
