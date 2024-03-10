@@ -1,0 +1,7 @@
+image:
+  repository: 673692536255.dkr.ecr.us-west-1.amazonaws.com/juliusoh
+  tag: latest
+  pullPolicy: IfNotPresent
+
+cronjob:
+  schedule: "0 0 * * SAT"
