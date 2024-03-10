@@ -6,8 +6,8 @@ image:
   repository: 673692536255.dkr.ecr.us-west-1.amazonaws.com/juliusoh
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: kmjsniper-api-47ea0f6b9d22dd3bd245f0c0adfbba07d70f2fec
-  clientTag: kmjsniper-web-47ea0f6b9d22dd3bd245f0c0adfbba07d70f2fec
+  tag: kmjsniper-api-b2f4c38712252cf3c9e58c9a4ce7c3cd010aa775
+  clientTag: kmjsniper-web-b2f4c38712252cf3c9e58c9a4ce7c3cd010aa775
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
