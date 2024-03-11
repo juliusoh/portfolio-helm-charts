@@ -3,4 +3,4 @@ image:
   tag: coin-report-f4e6ced2a7fc9894fce5ac7617daa5f513977a21
   pullPolicy: IfNotPresent
 cronjob:
-  schedule: "0 8 * * SAT"
+  schedule: "0 8 * * MON"
