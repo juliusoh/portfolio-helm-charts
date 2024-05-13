@@ -1,6 +1,6 @@
 image:
   repository: 673692536255.dkr.ecr.us-west-1.amazonaws.com/juliusoh
-  tag: coin-report-e912f0f0f2856e1aae87e88a4d0def0cfc2858ea
+  tag: coin-report-c305dba3c5967ca8b93b34ae9318691160190c3c
   pullPolicy: IfNotPresent
 cronjob:
   schedule: "0 8 * * MON"
